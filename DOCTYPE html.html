@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSU Success Plan</title>
+
+<!-- FontAwesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+<style>
+:root{
+  --spartan:#18453B;
+  --spartan-dark:#0f2c22;
+  --accent:#C5E86C;
+  --accent-dark:#9bc14f;
+  --soft:#EAF6EA;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --secondary:#fef9f4;
+  --highlight:#f2fff4;
+  --maxw:1200px;
+  --radius:14px;
+  --bullet-bg1:#f4fff4;
+  --bullet-bg2:#e6fff0;
+  --bullet-bg3:#d8ffe6;
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:Inter,system-ui,sans-serif; background:#f4f6f7;color:#072226;line-height:1.5;}
+a{color:var(--spartan); text-decoration:none;}
+a:hover{text-decoration:underline;}
+img{max-width:100%;display:block;}
+
+/* Nav */
+header.topnav{
+  position:sticky; top:0; z-index:80;
+  background:linear-gradient(90deg,var(--spartan),var(--spartan-dark));
+  color:#fff; padding:12px 18px; box-shadow:0 6px 18px rgba(2,6,23,0.12)
+}
+.nav-inner{ max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px }
+.brand { display:flex; gap:10px; align-items:center; font-weight:800; font-size:1.05rem }
+.brand i{ color:var(--accent); font-size:1.4rem }
+.nav-links { display:flex; gap:14px; align-items:center }
+.nav-links a{ color:#fff; text-decoration:none; padding:8px 12px; border-radius:10px; font-weight:700 }
+.nav-links a:hover{ background:rgba(255,255,255,0.06) }
+.nav-cta{ background:rgba(255,255,255,0.08); padding:8px 12px; border-radius:10px; font-weight:700 }
+
+/* Hero */
+.hero-wrap{ max-width:var(--maxw); margin:28px auto; display:grid; grid-template-columns:1fr 450px; gap:28px; padding:28px; align-items:center }
+@media (max-width:980px){ .hero-wrap{ grid-template-columns:1fr; padding:18px } .nav-links{ display:none } }
+.hero-card{ background:var(--highlight); border-radius:var(--radius); padding:28px; box-shadow:0 12px 30px rgba(2,6,23,0.06) }
+.hero-left h1{ margin:0 0 10px; color:var(--spartan); font-size:2rem; line-height:1.06 }
+.lead{ color:var(--muted); font-size:1.03rem; margin-bottom:16px }
+.hero-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px }
+.btn{ background:var(--spartan); color:#fff; border:none; padding:12px 16px; border-radius:10px; cursor:pointer; font-weight:800 }
+.btn.ghost{ background:#fff; color:var(--spartan); border:2px solid var(--spartan) }
+.hero-stats{ display:flex; gap:12px; margin-top:12px; flex-wrap:wrap }
+.stat{ background:#fff; border-radius:10px; padding:10px 14px; box-shadow:0 8px 20px rgba(2,6,23,0.04) }
+.stat strong{ display:block; color:var(--spartan); font-size:1.1rem }
+.hero-right{ border-radius:12px; overflow:hidden; box-shadow:0 12px 30px rgba(2,6,23,0.08) }
+
+/* Sections */
+.section{ max-width:var(--maxw); margin:26px auto; padding:26px; border-radius:var(--radius); background:var(--card); box-shadow:0 12px 30px rgba(2,6,23,0.04) }
+.section h2{ margin:0 0 8px; color:var(--spartan); display:flex; gap:10px; align-items:center }
+.section p.lead{ color:var(--muted); margin:0 0 12px }
+
+/* Bullet lists with icons and background colors */
+.section ul{ padding-left:0; list-style:none; margin-top:8px; }
+.section ul li{
+  display:flex; align-items:flex-start; gap:10px;
+  padding:10px 12px; border-radius:10px;
+  margin-bottom:6px; transition:all .3s ease;
+}
+.section ul li:nth-child(1){background:var(--bullet-bg1);}
+.section ul li:nth-child(2){background:var(--bullet-bg2);}
+.section ul li:nth-child(3){background:var(--bullet-bg3);}
+.section ul li:nth-child(4){background:var(--bullet-bg1);}
+.section ul li:hover{ transform:translateX(6px); }
+.section ul li i{ color:var(--accent-dark); margin-top:4px; }
+
+/* Goals progress bar */
+.goal{ margin:12px 0; }
+.progress-wrap{ background:#e6e6e6; border-radius:999px; overflow:hidden; height:12px; width:100%; margin-top:4px; }
+.progress{ height:12px; background:linear-gradient(90deg,var(--spartan-dark),var(--accent-dark)); width:0%; border-radius:999px; transition:width .6s ease; }
+
+/* Footer */
+footer{ background: linear-gradient(90deg,var(--spartan),#11312a); color:#fff; padding:30px; text-align:center; margin-top:28px }
+
+/* fade-up animation */
+.fade-up{ opacity:0; transform:translateY(10px); transition:opacity .6s ease, transform .6s ease }
+.fade-up.show{ opacity:1; transform:translateY(0) }
+</style>
+</head>
+<body>
+
+<header class="topnav">
+  <div class="nav-inner">
+    <div class="brand"><i class="fas fa-spartan-helmet"></i> <span>Spartans Success</span></div>
+    <nav class="nav-links">
+      <a href="#academic">Academic</a>
+      <a href="#community">Community</a>
+      <a href="#wellness">Wellness</a>
+      <a href="#plans" class="nav-cta">Goals & Progress</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- Hero -->
+<section class="hero-wrap fade-up">
+  <div class="hero-card hero-left">
+    <h1>MSU Personal Success Plan</h1>
+    <p class="lead">A structured plan for academics, engagement, and wellness — with resources, links, and measurable outcomes.</p>
+    <div class="hero-actions">
+      <button class="btn" onclick="document.querySelector('#academic').scrollIntoView({behavior:'smooth'})">Academic Plan</button>
+      <button class="btn ghost" onclick="document.querySelector('#community').scrollIntoView({behavior:'smooth'})">Community</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>3.8</strong><small class="muted">Target GPA</small></div>
+      <div class="stat"><strong>20+</strong><small class="muted">Volunteer Hours</small></div>
+      <div class="stat"><strong>4x/wk</strong><small class="muted">Exercise</small></div>
+    </div>
+  </div>
+  <div class="hero-right fade-up">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/MSU_Beaumont_Tower_fall.jpg" alt="MSU Campus">
+  </div>
+</section>
+
+<!-- Academic -->
+<section id="academic" class="section fade-up">
+  <h2><i class="fa-solid fa-book-open-reader"></i> Academic Success</h2>
+  <p class="lead">Skills, resources, and strategies for your learning at MSU.</p>
+  
+  <ul>
+    <li><i class="fa-solid fa-clock"></i> Manage your time using calendars, planners, and weekly reviews.</li>
+    <li><i class="fa-solid fa-chalkboard-user"></i> Engage in active study: Pomodoro sessions, practice tests, and group study.</li>
+    <li><i class="fa-solid fa-user-tie"></i> Attend office hours consistently to clarify concepts and build relationships with instructors.</li>
+    <li><i class="fa-solid fa-file-lines"></i> Take organized notes using methods like Cornell Notes or digital tools like Notion.</li>
+  </ul>
+
+  <p>Resources:</p>
+  <ul>
+    <li><a href="https://writing.msu.edu/" target="_blank">MSU Writing Center</a></li>
+    <li><a href="https://studygroup.msu.edu" target="_blank">MSU Study Groups</a></li>
+    <li><a href="https://www.notion.so" target="_blank">Notion</a></li>
+  </ul>
+</section>
+
+<!-- Community -->
+<section id="community" class="section fade-up">
+  <h2><i class="fa-solid fa-people-group"></i> Community Engagement</h2>
+  <p class="lead">Building connections and belonging at MSU.</p>
+  
+  <ul>
+    <li><i class="fa-solid fa-users-gear"></i> Join student organizations to expand your social network.</li>
+    <li><i class="fa-solid fa-hands-praying"></i> Participate in volunteer opportunities and service-learning projects.</li>
+    <li><i class="fa-solid fa-comment-dots"></i> Seek mentorship from faculty or upperclassmen for guidance.</li>
+    <li><i class="fa-solid fa-calendar-check"></i> Attend campus events to strengthen your sense of belonging.</li>
+  </ul>
+
+  <p>Resources:</p>
+  <ul>
+    <li><a href="https://experience.msu.edu" target="_blank">Experience MSU</a></li>
+    <li><a href="https://studentsuccess.msu.edu/service-learning/" target="_blank">MSU Service Learning</a></li>
+    <li><a href="https://mentorship.msu.edu" target="_blank">MSU Mentorship Programs</a></li>
+  </ul>
+</section>
+
+<!-- Wellness -->
+<section id="wellness" class="section fade-up">
+  <h2><i class="fa-solid fa-heart-pulse"></i> Health & Wellness</h2>
+  <p class="lead">Fitness, mental health, and financial literacy for success.</p>
+  
+  <ul>
+    <li><i class="fa-solid fa-dumbbell"></i> Maintain physical health with regular workouts and recreational sports.</li>
+    <li><i class="fa-solid fa-brain"></i> Manage stress and mental health through counseling, meditation, or journaling.</li>
+    <li><i class="fa-solid fa-wallet"></i> Track finances and develop budgeting skills for financial wellness.</li>
+    <li><i class="fa-solid fa-bed"></i> Get adequate sleep and nutrition to support academic and personal performance.</li>
+  </ul>
+
+  <p>Resources:</p>
+  <ul>
+    <li><a href="https://recsports.msu.edu" target="_blank">MSU Rec Sports</a></li>
+    <li><a href="https://caps.msu.edu" target="_blank">Counseling & Psychiatric Services (CAPS)</a></li>
+    <li><a href="https://finsuccess.msu.edu" target="_blank">MSU Financial Literacy</a></li>
+  </ul>
+</section>
+
+<!-- Goals & Progress -->
+<section id="plans" class="section fade-up">
+  <h2><i class="fa-solid fa-clipboard-list"></i> Goals & Progress</h2>
+  
+  <div class="goal">
+    <strong>Academic Goal: Achieve 3.8 GPA</strong>
+    <div class="progress-wrap"><div class="progress" style="width:50%"></div></div>
+    <small>Timeline: End of semester</small>
+  </div>
+  
+  <div class="goal">
+    <strong>Community Goal: 20+ Volunteer Hours</strong>
+    <div class="progress-wrap"><div class="progress" style="width:30%"></div></div>
+    <small>Timeline: End of academic year</small>
+  </div>
+  
+  <div class="goal">
+    <strong>Wellness Goal: Exercise 4x per week</strong>
+    <div class="progress-wrap"><div class="progress" style="width:60%"></div></div>
+    <small>Timeline: Ongoing</small>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 MSU Personal Success Plan</p>
+</footer>
+
+<script>
+// fade-up reveal
+const fades = document.querySelectorAll('.fade-up');
+function reveal(){ const t=window.innerHeight*0.88; fades.forEach(el=>{ if(el.getBoundingClientRect().top<t) el.classList.add('show') }) }
+window.addEventListener('scroll',reveal); window.addEventListener('load',()=>{ reveal(); setTimeout(reveal,220) });
+</script>
+
+</body>
+</html>
